@@ -30,10 +30,23 @@ class SinglyLinkedList {
     //return the list:
     return this 
   }
+
+  // here's how to traverse a singly linked list:
+
+  traverse() {
+    let current = this.head
+    while ( current ) {
+      console.log( current.val )
+      current = current.next
+    }
+  }
 }
 
 
 const list = new SinglyLinkedList()
 list.push('hi')
 list.push('you')
-console.log(list)
+list.push('there')
+//console.log(list)
+
+list.traverse()
