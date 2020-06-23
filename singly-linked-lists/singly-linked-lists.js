@@ -40,6 +40,27 @@ class SinglyLinkedList {
       current = current.next
     }
   }
+
+  pop() {
+    //if there are no nodes, return null
+    if ( !this.head ) return undefined
+    let current = this.head
+    let newTail = current
+    while( current.next ) {
+      newTail = current
+      current = current.next
+    }
+    this.tail = newTail
+    //sever connect with the former last item of the list:
+    this.tail.next = null
+    this.length--
+    if ( this.length === 0 ) {
+      this.head = null
+      this.tail = null
+    }
+    return current
+  }
+
 }
 
 
@@ -47,6 +68,9 @@ const list = new SinglyLinkedList()
 list.push('hi')
 list.push('you')
 list.push('there')
-//console.log(list)
+console.log(list)
 
-list.traverse()
+//list.traverse()
+
+list.pop()
+console.log(list)
