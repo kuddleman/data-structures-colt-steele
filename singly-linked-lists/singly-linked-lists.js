@@ -55,16 +55,22 @@ class SinglyLinkedList {
   pop() {
     //if there are no nodes, return null.  We can do this by checking if there is a head
     if ( !this.head ) return undefined
+
+
+    //we set two variable: current which will be the head
+    // new tail is the same at the beginning of the loop
     let current = this.head
     let newTail = current
-    while( current.next ) {
-      newTail = current
-      current = current.next
+    while( current.next ) {   //while current still has a 'next'
+      newTail = current    //set newTail to be the same as current
+      current = current.next //then move current forward one node
     }
     this.tail = newTail
-    //sever connect with the former last item of the list:
+    //sever connection with the former last item of the list:
     this.tail.next = null
     this.length--
+    
+    // this is the special case if there is one item left:
     if ( this.length === 0 ) {
       this.head = null
       this.tail = null
