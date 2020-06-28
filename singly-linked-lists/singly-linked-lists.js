@@ -1,3 +1,5 @@
+// a linked list is a collection of classes..so first make a node:
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -40,6 +42,8 @@ class SinglyLinkedList {
       current = current.next
     }
   }
+
+  
 
   pop() {
     //if there are no nodes, return null
