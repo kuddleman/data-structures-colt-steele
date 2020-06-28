@@ -43,10 +43,17 @@ class SinglyLinkedList {
     }
   }
 
-  
+  // Popping Pseudocode:
+
+  // If there are no nodes in the list, return undefined
+  // Loop through the list until you reach the tail
+  // Set the next property of the 2nd to last node to be null
+  // Set the tail to be the 2nd to last node
+  // Decrement the length of the list by 1
+  // Return the value of the node removed
 
   pop() {
-    //if there are no nodes, return null
+    //if there are no nodes, return null.  We can do this by checking if there is a head
     if ( !this.head ) return undefined
     let current = this.head
     let newTail = current
