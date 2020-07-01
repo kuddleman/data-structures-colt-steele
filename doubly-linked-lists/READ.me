@@ -1,0 +1,26 @@
+SLL is simpler to implement, and has smaller memory requirement.
+
+DLL has more efficient iteration, especially if you want to iterate in reverse.
+
+
+Advantages of DLL over SLL
+
+DLL can be traversed both forward and backward direction
+
+Delete operation in DLL is more efficient if the pointer to the node
+to be deleted is given
+
+We can quickly insert a new node before a given node.
+
+In SLL, to delete, you need the point to the previous node...to get
+this, you have to traverse the whole list.  With DLL, we can get the
+previous node using previous pointer.
+
+
+DISAdvantages of DLL compared to SLL
+
+Every node of DLL requires extra space for a previous pointer. DLL uses more memory.
+All operations require and extra pointer, the previous pointer, to be maintained.
+
+Deletion operation: for DLL, it's O(1)
+for SLL, it's O(N)
