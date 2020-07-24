@@ -16,6 +16,29 @@ class List {
     this.size++
   }   
 
+  // given an index, remove an item:
+  remove( index ) {
+
+    if ( this.size === 0 ) {
+      return null
+    }
+
+    let removed = this.data[ index ]
+    
+    // scoot all values over
+    for ( let i = index; i < this.size - 1; i++ ) {
+      this.data[i] = this.data[ i + 1 ]
+    }
+
+    // manually overwrite the stale data:
+    this.data[ this.size - 1 ] = null
+
+    // decrement the size by 1
+    this.size --
+    
+    return removed
+  }
+
   grow() {
     let aa = new Array( this.data.length * 2 )
     for ( let i = 0; i < this.data.length; i++ ) {
@@ -44,5 +67,14 @@ class List {
 const myList = new List()
 console.log(myList.data)
 myList.push(42)
+myList.push(25)
+myList.push(27)
+myList.push(67)
+myList.push(29)
+console.log('str:', myList.toString())
+console.log('data:', myList.data)
+
+myList.remove(2)
+
 console.log('str:', myList.toString())
 console.log('data:', myList.data)
