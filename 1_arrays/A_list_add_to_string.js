@@ -48,6 +48,31 @@ class List {
     this.data = aa
   }
 
+  add ( index, value ) {
+    if ( this.size === this.length ) {
+      this.grow()
+    }
+
+    for ( let i = this.size; i > index; i-- ) {
+      this.data[ i ] = this.data[ i - 1 ]
+    }
+    this.data[ index ] = value
+    this.size ++
+  }
+  // better to use this.size when iterating as opposed to
+    // this.data.length.  The latter will go over the empty spaces (if any)
+    // as well.  The former will just interate over the size of the array where
+    // there is actual data.  
+    
+  contains ( value ) {
+    for ( let i = 0; i < this.size; i++ ) {
+      if ( this.data[ i ] === value ) {
+        return true
+      }
+    }
+    return false
+  }
+
   // use toString method to choose how we want
      // to represent the class
 
