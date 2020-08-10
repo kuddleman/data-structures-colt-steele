@@ -4,6 +4,30 @@ class List {
     this.data = new Array(10)
     this.size = 0
   }
+  
+
+// a simple method that returns the value at the specified index
+  // if the index is winthin the valid range of the elements in the list.  
+  // It returns null if someone tries to access an index out of range
+  // of the list
+
+get( index ) {
+  if ( index < this.size ) {
+    return this.data[ index ]
+  }
+  return null
+}  
+
+// overwrites the value as the specified index,
+  // and the index must be within a valid range of the current size
+  // of the list
+set ( index, value ) {
+  if ( index >= 0 && index < this.size ) {
+    this.data[ index ] = value
+  }
+  return 'Not valid data'
+}  
+
 
   // add the value to the first-most free position in the
      // data array
@@ -63,7 +87,7 @@ class List {
     // this.data.length.  The latter will go over the empty spaces (if any)
     // as well.  The former will just interate over the size of the array where
     // there is actual data.  
-    
+
   contains ( value ) {
     for ( let i = 0; i < this.size; i++ ) {
       if ( this.data[ i ] === value ) {
@@ -71,6 +95,19 @@ class List {
       }
     }
     return false
+  }
+
+  concat ( otherArr ) {
+    let result = new List()
+    for (let i = 0; i < this.size; i++) {
+      result.push( this.get(i) )
+    }
+    for (let i = 0; i < other.size; i++) {
+      result.push( other.get(i) )
+    }
+    
+    return result
+
   }
 
   // use toString method to choose how we want
