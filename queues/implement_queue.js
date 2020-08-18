@@ -7,3 +7,10 @@ class QueueNode {
   }
 }
 
+class Queue {
+  constructor() {
+    this.front = null
+    this.tail = null
+  }
+}
+
