@@ -12,5 +12,11 @@ class Queue {
     this.front = null
     this.tail = null
   }
+
+  enqueue( value ) {
+    let node = new QueueNode( value )
+    node.next = this.front
+    this.front = node
+  }
 }
 
