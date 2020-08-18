@@ -22,6 +22,25 @@ class Queue {
     this.tail = node
   }
 
+  dequeue() {
+    if ( this.front === null ) {
+      return null
+    }
+
+    // we will return the piece of data on the node, not the node itself
+    let result = this.front.data
+    if ( this.front === this.tail ) {
+      // if there was just one node left, then there is no more front or tail
+      this.front === null
+      this.tail ===  null
+    } else {
+      // otherwise, make the front equal to the secon thing in the list
+      this.front = this.front.next
+    }
+    
+    return result
+  }
+
 
 }
 
