@@ -16,7 +16,7 @@ class ArrayStack {
     if ( this.size === this.data.length ) {
       this.grow()
     }
-    this.date[ this.size ] = value
+    this.data[ this.size ] = value
     this.size++
   }
 
