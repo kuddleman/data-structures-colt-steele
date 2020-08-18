@@ -13,6 +13,10 @@ class Queue {
     this.tail = null
   }
 
+  isEmpty (
+    return this.front === null
+  )
+
   enqueue( value ) {
     let node = new QueueNode( value )
     if ( this.front === null ) {
