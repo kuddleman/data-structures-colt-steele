@@ -13,9 +13,9 @@ class Queue {
     this.tail = null
   }
 
-  isEmpty (
+  isEmpty() {
     return this.front === null
-  )
+  }
 
   enqueue( value ) {
     let node = new QueueNode( value )
