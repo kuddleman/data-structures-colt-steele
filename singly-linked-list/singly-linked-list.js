@@ -1,9 +1,9 @@
-class Node {
-  constructor(val) {
-    this.val = val
-    this.next = next
-  }
-}
+// class Node {
+//   constructor(val) {
+//     this.val = val
+//     this.next = next
+//   }
+// }
 
 class SinglyLinkedList {
   constructor() {
