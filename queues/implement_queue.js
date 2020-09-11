@@ -11,6 +11,7 @@ class Queue {
   constructor() {
     this.front = null
     this.tail = null
+    this.size = 0
   }
 
   isEmpty() {
@@ -18,6 +19,7 @@ class Queue {
   }
 
   enqueue( value ) {
+    this.size ++
     let node = new QueueNode( value )
     if ( this.front === null ) {
        this.front = node
@@ -33,6 +35,8 @@ class Queue {
     if ( this.front === null ) {
       return null
     }
+
+    this.size --
 
     // we will return the piece of data on the node, not the node itself
     let result = this.front.data
