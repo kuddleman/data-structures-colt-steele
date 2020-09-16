@@ -27,7 +27,9 @@ class SinglyLinkedList {
       this.tail = newNode
       this.head = newNode
     }
+    // set the current tail's "next"  to our new node
     this.tail.next = newNode
+    // set the tail to the new node
     this.tail = newNode
     this.length++
   }
