@@ -17,7 +17,7 @@ class LinkedStack {
     return this.top === null
   }
 
-  length(){
+  getLength(){
     return this.size
   }
  
